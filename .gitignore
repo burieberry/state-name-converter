@@ -1,3 +1,9 @@
+# exclude everything
 source-output/*
 input-data/*
 results-data/*
+
+# exception to the rule
+!source-output/.gitkeep
+!input-data/.gitkeep
+!results-data/.gitkeep
