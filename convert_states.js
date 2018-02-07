@@ -1,7 +1,7 @@
 const fs = require('fs');
-const stateObjs = require('./state-names.json');
+const stateObjs = require('./source-input/state-names.json');
 
-const apNames = fs.readFileSync('./state-abbr.txt', 'utf8');
+const apNames = fs.readFileSync('./source-input/state-abbr.txt', 'utf8');
 
 function formatNames() {
   const stateArr = [];
@@ -26,7 +26,7 @@ function formatNames() {
 
   console.log(stateArr);
 
-  const results = fs.writeFile('apStateNames.json', JSON.stringify(stateArr), 'utf8', (err, data) => {
+  const results = fs.writeFile('source-output/apStateNames.json', JSON.stringify(stateArr), 'utf8', (err, data) => {
     if (err) throw err;
     console.log('file saved');
   });

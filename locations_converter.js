@@ -1,7 +1,7 @@
 const fs = require('fs');
-const stateObjs = require('./apStateNames.json');
+const stateObjs = require('./source-output/apStateNames.json');
 
-const allStates = fs.readFileSync('./states_013018.csv', 'utf8');
+const allStates = fs.readFileSync('./input-data/giving-back-old.csv', 'utf8');
 
 function convertStates() {
   let results = '';
@@ -20,11 +20,11 @@ function convertStates() {
         results += `${city}, ${convertedName}\n`;
       }
     });
-  });
+  }, 1);
 
   console.log(results);
 
-  const resultFile = fs.writeFile('convertedStateNames.csv', results, 'utf8', (err, data) => {
+  const resultFile = fs.writeFile('results-data/giving-back-ap.csv', results, 'utf8', (err, data) => {
     if (err) throw err;
     console.log('file saved');
   });
